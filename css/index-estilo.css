@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  height: 120vh;
+}
+
+header {
+  height: 20vh;
+  background-color: blue;
+}
+
+nav {
+  height: 20vh;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr, 2fr;
+  grid-template-areas:
+    "primerNav"
+    "segundoNav";
+}
+
+/* PRIMER NAV */
+
+#primerNav {
+  grid-area: primerNav;
+  background-color: rgba(183, 183, 183, 0.452);
+  display: grid;
+  grid-template-areas: "logoMJ vacio vacio vacio  vacio vacio vacio vacio seccionesUno";
+}
+
+#logoMJ {
+  grid-area: logoMJ;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoMJ img {
+  height: 50px;
+}
+
+#seccionesUno {
+  grid-area: seccionesUno;
+  font-size: 0.8rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1 fr;
+  grid-template-areas: "buscarTienda ayuda unete iniciar";
+  text-align: center;
+}
+
+#buscarTienda {
+  grid-area: buscarTienda;
+}
+#ayuda {
+  grid-area: ayuda;
+}
+
+#unete {
+  grid-area: unete;
+}
+
+#iniciar {
+  grid-area: iniciar;
+}
+
+/* SEGUNDO NAV */
+
+#segundoNav {
+  background-color: white;
+  grid-area: segundoNav;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logoNike seccionesDos busqueda";
+}
+
+#logoNike {
+  grid-area: logoNike;
+  display: grid;
+  padding-right: 90px;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccionesDos {
+  grid-area: seccionesDos;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "lanzamientos seccionHombre seccionMujer rebajas seccionTenis";
+  text-align: center;
+}
+
+#lanzamientos {
+  grid-area: lanzamientos;
+}
+#seccionHombr {
+  grid-area: seccionHombre;
+}
+#seccionMujer {
+  grid-area: seccionMujer;
+}
+#rebajas {
+  grid-area: rebajas;
+}
+#seccionTenis {
+  grid-area: seccionTenis;
+}
+
+#busqueda {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 4fr, repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "busquedaBoton logoCorazon";
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+#busquedaBoton {
+  grid-area: busquedaBoton;
+}
+
+#busquedaBoton input {
+  width: 60%;
+  border: 1px solid black;
+}
+
+#logoCorazon {
+  grid-area: logoCorazon;
+  padding-right: 20px;
+}
+
+/* IMAGEN DE BIENVENIDA */
+main {
+  height: 100vh;
+}
+/* Estilos para el contenedor principal */
+.containerImg {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Estilos para la imagen de fondo */
+.background-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#jordanTodos {
+  display: grid;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+/* Estilos para el texto superpuesto */
+.overlay-text {
+  height: 40vh;
+  width: 60vh;
+  vertical-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el botón */
+.overlay-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 50%;
+}
+
+#centrarBoton {
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  height: 35vh;
+  background-color: black;
+  color: white;
+}
+
+#informacionFooter {
+  height: 20vh;
+  display: grid;
+  padding: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "primeraColumna segundaColumna terceraColumna logosFooter logosFooter";
+  align-self: center;
+}
+
+#primeraColumna {
+  grid-area: primeraColumna;
+  display: grid;
+  align-content: stretch;
+}
+#segundaColumna {
+  grid-area: segundaColumna;
+  display: grid;
+}
+
+#terceraColumna {
+  grid-area: terceraColumna;
+  display: grid;
+}
+
+#logosFooter {
+  grid-area: logosFooter;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#copyRight {
+  height: 15vh;
+  display: grid;
+  align-items: center;
+}
+
+#copyRightUno {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
