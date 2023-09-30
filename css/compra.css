@@ -147,6 +147,9 @@ nav {
 #logoCorazon div button {
   width: 80%;
   font-size: 1rem;
+  background-color: rgb(220, 97, 63);
+  color: white;
+  border-radius: 1rem;
 }
 
 #logoCorazon:hover > div {
@@ -156,8 +159,11 @@ nav {
   height: 400px;
   position: absolute;
   right: 0;
+  top: 150px;
   background-color: white;
   border: 1px solid black;
+  transform: scale(1.1); /* Por ejemplo, agranda el botón en hover */
+  z-index: 2;
 }
 
 /* IMAGEN DE BIENVENIDA */
