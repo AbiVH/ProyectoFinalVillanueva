@@ -65,24 +65,20 @@
                 Buscar
               </button>
             </div>
-            <div id="logoCorazon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="30"
-                fill="currentColor"
-                class="bi bi-bag-heart"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
-                />
-              </svg>
-              <div id="carrito">
-                <button>VACIAR CARRITO</button>
-              </div>
-            </div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="30"
+              fill="currentColor"
+              class="bi bi-bag-heart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+              />
+            </svg>
           </div>
         </div>
       </nav>
@@ -91,7 +87,7 @@
       <!-- SLIDER -->
       <div class="container-flew">
         <div class="row">
-          <div class="col-2">
+          <div id="contenidoLateral" class="col-2">
             <div id="list-example" class="list-group">
               <a
                 class="list-group-item list-group-item-action"
@@ -113,8 +109,18 @@
                 href="#list-item-4"
                 >Shorts</a
               >
+              <a
+                id="carritoBloque"
+                class="list-group-item list-group-item-action"
+                href="#list-item-4"
+                >Carrito
+
+                <div id="mostrarCarrito"></div>
+                <button>VACIAR CARRITO</button>
+              </a>
             </div>
           </div>
+
           <div class="col-10">
             <div
               id="productos"
@@ -125,7 +131,7 @@
               tabindex="0"
             >
               <div id="producto1">
-                <img src="../assets/producto1.webp" alt="" />
+                <img src="../assets/producto1.jpg" alt="" />
                 <button id="btn-producto1">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Air Jordan 1 Mid</p>
@@ -134,16 +140,16 @@
                 <p>$3,199</p>
               </div>
               <div id="producto2">
-                <img src="../assets/producto2.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto2.jpg" alt="" />
+                <button id="btn-producto2">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Jordan Flight Essentials</p>
                 <p>1 color</p>
                 <p>$1,049</p>
               </div>
               <div id="producto3">
-                <img src="../assets/producto3.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto3.jpg" alt="" />
+                <button id="btn-producto3">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Air Jordan 1 Mid</p>
                 <p>Calzado para mujer</p>
@@ -151,8 +157,8 @@
                 <p>$3,199</p>
               </div>
               <div id="producto4">
-                <img src="../assets/producto4.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto4.jpg" alt="" />
+                <button id="btn-producto4">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Paris Saint-Germain 2023/24</p>
                 <p>Jersey de fútbol Jordan para mujer</p>
@@ -160,32 +166,32 @@
                 <p>$1,899</p>
               </div>
               <div id="producto5">
-                <img src="../assets/producto5.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto5.jpg" alt="" />
+                <button id="btn-producto5">COMPRAR</button>
                 <p>Air Jordan 1 Mid</p>
                 <p>Calzado para niños grandes</p>
                 <p>1 color</p>
                 <p>$2,649</p>
               </div>
               <div id="producto6">
-                <img src="../assets/producto6.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto6.jpg" alt="" />
+                <button id="btn-producto6">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Air Jordan 1 Low G</p>
                 <p>1 color</p>
                 <p>$3,499</p>
               </div>
               <div id="producto7">
-                <img src="../assets/producto7.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto7.jpg" alt="" />
+                <button id="btn-producto7">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Air Jordan 1 Low SE</p>
                 <p>1 color</p>
                 <p>$2,649</p>
               </div>
               <div id="producto8">
-                <img src="../assets/producto8.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto8.jpg" alt="" />
+                <button id="btn-producto8">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Jordan Dri-FIT Sport</p>
                 <p>Shorts Diamond para hombre</p>
@@ -193,8 +199,8 @@
                 <p>$1,149</p>
               </div>
               <div id="producto9">
-                <img src="../assets/producto9.webp" alt="" />
-                <button>COMPRAR</button>
+                <img src="../assets/producto9.jpg" alt="" />
+                <button id="btn-producto9">COMPRAR</button>
                 <p>Lo último</p>
                 <p>Jordan Flight MVP</p>
                 <p>Sudadera con gorro para hombre</p>
@@ -205,11 +211,6 @@
           </div>
         </div>
       </div>
-      <!-- MERCADO -->
-      <!-- <div id="mercado">
-        <div id="slideMercado"></div>
-        <div id="productos"></div>
-      </div> -->
     </main>
     <footer>
       <div id="informacionFooter">
@@ -307,7 +308,7 @@
     </footer>
 
     <!-- JS INDEX -->
-    <script src="../js/index-js.js"></script>
+    <script src="../js/compra-js.js"></script>
     <!-- BOOTSTRAP JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
