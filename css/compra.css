@@ -5,7 +5,35 @@
 }
 
 body {
-  height: 255vh;
+  height: 265vh;
+}
+
+.darkModeBody {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.darkModeNav1 {
+  color: black;
+}
+
+.darkModeNav2 {
+  color: white;
+  background-color: black;
+}
+
+.dayModeBody {
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+.dayModeNav1 {
+  color: white;
+}
+
+.dayModeNav2 {
+  color: black;
+  background-color: white;
 }
 
 header {
@@ -29,14 +57,18 @@ nav {
 #primerNav {
   grid-area: primerNav;
   background-color: rgba(183, 183, 183, 0.452);
+  color: black;
   display: grid;
-  grid-template-areas: "logoMJ vacio vacio vacio  vacio vacio vacio vacio seccionesUno";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "logoMJ logoMJ logoMJ seccionesUno seccionesUno seccionesUno ";
 }
 
 #logoMJ {
   grid-area: logoMJ;
   display: grid;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 100px;
   align-items: center;
 }
 
@@ -50,10 +82,15 @@ nav {
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1 fr;
-  grid-template-areas: "buscarTienda ayuda unete iniciar";
+  grid-template-areas: "buscarTienda ayuda unete iniciar logoDark";
   text-align: center;
+  padding-right: 20px;
+}
+
+#logoDarkMode {
+  grid-area: logoDark;
 }
 
 #buscarTienda {
@@ -69,12 +106,12 @@ nav {
 
 #iniciar {
   grid-area: iniciar;
+  padding-right: 20px;
 }
 
 /* SEGUNDO NAV */
 
 #segundoNav {
-  background-color: white;
   grid-area: segundoNav;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -156,7 +193,7 @@ nav {
 
 /* IMAGEN DE BIENVENIDA */
 main {
-  height: 220vh;
+  height: 230vh;
 }
 
 #list-example {

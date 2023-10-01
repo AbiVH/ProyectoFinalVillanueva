@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <br>${producto1Carrito.descripcion}
                   <br>1 color
                   <br>${producto1Carrito.precio}
-                 
+                  
                 </div>`;
 
     // REGRESAMOS VALOR AL BLOQUE DONDE LO QUEREMOS IMPRIMIR
@@ -226,3 +226,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // El elemento existe, puedes acceder a sus propiedades aquí
   }
 });
+
+let borrarCarrito = document.getElementById("borrarCarrito");
+borrarCarrito.addEventListener("click", vaciarCarrito);
+function vaciarCarrito() {
+  mostrarCarrito.innerHTML = "";
+  // mostrarCarrito.clear();
+}
+
+// STORAGE
+btnDarkMode = document.getElementById("logoDark");
+if (localStorage.getItem("DarkMode")) {
+  // si existe
+} else {
+  localStorage.getItem("DarkMode", false);
+}
+
+if (localStorage.getItem("DarkMode") == "true") {
+  document.body.classList.toggle("darkModeBody");
+  document.getElementById("primerNav").classList.toggle("darkModeNav1");
+  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+  btnDarkMode.innerHTML = "Light";
+}
+
+btnDarkMode.addEventListener("click", darkMode);
+function darkMode() {
+  console.log("Funciona");
+  document.body.classList.toggle("darkModeBody");
+  document.getElementById("primerNav").classList.toggle("darkModeNav1");
+  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+
+  if (localStorage.getItem("DarkMode") == "false") {
+    // MODO OSCURO STORAGE
+    btnDarkMode.innerHTML = "Light";
+    localStorage.setItem("DarkMode", "true");
+  } else if (localStorage.getItem("DarkMode") == "true") {
+    // MODO LIGHT STORAGE
+    btnDarkMode.innerHTML = "Dark";
+    localStorage.setItem("DarkMode", "false");
+  }
+}
