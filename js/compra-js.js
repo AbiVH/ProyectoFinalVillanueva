@@ -266,3 +266,25 @@ function darkMode() {
     localStorage.setItem("DarkMode", "false");
   }
 }
+
+// ELEMENTOS JSON
+
+const producto1JSON = JSON.stringify(producto1Carrito);
+const producto2JSON = JSON.stringify(producto2Carrito);
+const producto3JSON = JSON.stringify(producto3Carrito);
+const producto4JSON = JSON.stringify(producto4Carrito);
+const producto5JSON = JSON.stringify(producto5Carrito);
+const producto6JSON = JSON.stringify(producto6Carrito);
+const producto7JSON = JSON.stringify(producto7Carrito);
+const producto8JSON = JSON.stringify(producto8Carrito);
+const producto9JSON = JSON.stringify(producto9Carrito);
+
+localStorage.setItem("producto1", producto1JSON);
+localStorage.setItem("producto2", producto2JSON);
+localStorage.setItem("producto3", producto3JSON);
+localStorage.setItem("producto4", producto4JSON);
+localStorage.setItem("producto5", producto5JSON);
+localStorage.setItem("producto6", producto6JSON);
+localStorage.setItem("producto7", producto7JSON);
+localStorage.setItem("producto8", producto8JSON);
+localStorage.setItem("producto9", producto9JSON);
