@@ -3,36 +3,36 @@
     "id": 1,
     "nombre": "Zapatillas Running Nike Air Zoom Pegasus",
     "precio": 129.99,
-    "imagen": "../assets/nike-producto1.jpg"
+    "imagen": "../assets/producto1.jpg"
   },
   {
     "id": 2,
     "nombre": "Tenis Nike Air Max 270",
     "precio": 149.95,
-    "imagen": "../assets/nike-producto2.jpg"
+    "imagen": "../assets/producto1.jpg"
   },
   {
     "id": 3,
     "nombre": "Zapatos Deportivos Nike Free RN",
     "precio": 109.99,
-    "imagen": "../assets/nike-producto3.jpg"
+    "imagen": "../assets/producto1.jpg"
   },
   {
     "id": 4,
     "nombre": "Zapatillas Nike React Infinity Run Flyknit",
     "precio": 159.99,
-    "imagen": "../assets/nike-producto4.jpg"
+    "imagen": "../assets/producto1.jpg"
   },
   {
     "id": 5,
     "nombre": "Zapatos de Fútbol Nike Mercurial Superfly",
     "precio": 189.95,
-    "imagen": "../assets/nike-producto5.jpg"
+    "imagen": "../assets/producto1.jpg"
   },
   {
     "id": 6,
     "nombre": "Tenis Nike Joyride Run Flyknit",
     "precio": 129.99,
-    "imagen": "../assets/nike-producto6.jpg"
+    "imagen": "../assets/producto1.jpg"
   }
 ]

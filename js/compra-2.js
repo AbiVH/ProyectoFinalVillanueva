@@ -56,32 +56,65 @@ crearProductoBtn.onclick = () => {
     : (verificarPrecio = true);
 
   if (verificarNombre == true && verificarPrecio == true) {
-    let nuevoProducto = new crearProducto(nombreNuevo, precioNuevo);
-    almacenProductosPersonalizados.push(nuevoProducto);
+    let nuevoProducto = new crearProducto(
+      nombreNuevo,
+      precioNuevo,
+      "incognito.png"
+    );
+    // almacenProductosPersonalizados.push(nuevoProducto);
     console.log(almacenProductosPersonalizados);
     nombreNuevoProducto.value = "";
     precioNuevoProducto.value = "";
+    // let seccionTienda = localStorage.getItem("contenidoPrincipal");
+    // seccionTienda.push(nuevoProducto);
   }
 };
 
 // SEECIÓN CONTENIDO
-// Creamos un array para imprimir el contenido inicial
+// declaramos array de los productos que se verán en la sección principal
+let productosPrincipales = [];
+fetch("../json/calzado.json")
+  .then((res) => res.json())
+  .then((info) => {
+    info.forEach((productos) => {
+      productosPrincipales.push(productos);
+    });
 
-let contenidoInicial = [];
+    // Convertir el array a una cadena JSON y guardarla en el localStorage
+    localStorage.setItem(
+      "contenidoPrincipal",
+      JSON.stringify(productosPrincipales)
+    );
+  })
+  .catch((error) => {
+    console.error("Error al cargar el JSON: " + error);
+  });
+// Codicionamos el Storage para que se nos carge una vista preliminar
+if (localStorage.getItem("contenidoPrincipal")) {
+  let almacenStorage = localStorage.getItem("contenidoPrincipal");
+  let productosLocalStorage = JSON.parse(almacenStorage);
 
-function imprimirProductos(apiJson) {
+  console.log(productosLocalStorage);
+  mostrarProductos(productosLocalStorage);
+} else {
+  function imprimirProductos(apiJson) {
+    fetch(apiJson)
+      .then((resultado) => {
+        return resultado.json();
+      })
+      .then((info) => {
+        mostrarProductos(info);
+      });
+  }
+  imprimirProductos("../json/general.json");
+}
+// creamos funcion para mostrar productos en la sección principal
+function mostrarProductos(array) {
   let contenedorProductos = document.getElementById("contenedorProductos");
-
-  fetch(apiJson)
-    .then((resultado) => {
-      return resultado.json();
-    })
-    .then((info) => {
-      info.forEach((producto) => {
-        let agregarImpresionProducto = document.createElement("div");
-        agregarImpresionProducto.className =
-          "col-12 col-md-6 col-lg-4 col-my-2";
-        agregarImpresionProducto.innerHTML = `<div id="${producto.id}" style="text-align: center">
+  array.forEach((producto) => {
+    let agregarImpresionProducto = document.createElement("div");
+    agregarImpresionProducto.className = "col-12 col-md-6 col-lg-4 col-my-2";
+    agregarImpresionProducto.innerHTML = `<div id="${producto.id}" style="text-align: center">
         <img src="../assets/${producto.imagen}" alt="" style="width: 18rem" ; />
         <p>Lo último</p>
         <p>${producto.nombre}</p>
@@ -90,9 +123,16 @@ function imprimirProductos(apiJson) {
         <button id="btn-producto${producto.id}">COMPRAR</button>
       </div>
       <br>`;
-        contenedorProductos.appendChild(agregarImpresionProducto);
-      });
-    });
+    contenedorProductos.appendChild(agregarImpresionProducto);
+  });
 }
 
-imprimirProductos("../json/general.json");
+// Creamos un array para imprimir el contenido inicial
+// let contenidoInicial = [];
+
+// creamos el reloj -> 1:59:22
+// const DataTime = luxom.DateTime
+// setInterval(()=>{
+//   let fechaAhora=DateTime.now();
+//   fechaDiv.innerHTML=
+// })
