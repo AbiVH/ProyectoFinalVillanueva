@@ -18,17 +18,19 @@
   <body>
     <header>
       <nav>
+        <!-- PRIMER NAV -->
         <div id="primerNav" class="borde">
           <div id="logoMJ" class="borde">
             <a href="../index.html"
               ><img src="../assets/mj23.png" alt="Logo de MJ23"
             /></a>
           </div>
+          <!-- SECCIONES DEL PRIMER NAV -->
           <div id="seccionesUno" class="borde">
             <div id="buscarTienda">BUSAR TIENDA</div>
             <div id="ayuda">AYUDA</div>
             <div id="unete">ÚNETE</div>
-            <div id="iniciar">INICIAR SESION</div>
+            <div id="iniciarSesion">INICIAR SESION</div>
             <button id="logoDark" class="btn btn-outline-success" type="submit">
               Dark
               <svg
@@ -46,8 +48,10 @@
             </button>
           </div>
         </div>
+        <!-- SEGUNDO NAV -->
         <div id="segundoNav" class="borde">
           <div id="logoNike" class="borde">
+            <!-- LOGO DE NIKE -->
             <svg
               role="img"
               width="70"
@@ -55,12 +59,12 @@
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>Nike</title>
               <path
                 d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"
               />
             </svg>
           </div>
+          <!-- SECCIONES DEL SEGUNDO NAV -->
           <div id="seccionesDos" class="borde">
             <div id="lanzamientos">NUEVOS LANZAMIENTOS</div>
             <div id="seccionHombre">HOMBRE</div>
@@ -68,6 +72,7 @@
             <div id="rebajas">REBAJAS</div>
             <div id="seccionTenis">SNKRS</div>
           </div>
+          <!-- BUSQUEDA -->
           <div id="busqueda">
             <div id="busquedaBoton" class="d-flex justify-content-center">
               <input
@@ -76,26 +81,17 @@
                 placeholder="Buscar"
                 aria-label="Buscar"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <!-- BOTÓN BUSQUEDA -->
+              <button
+                id="buscarBtn"
+                class="btn btn-outline-success"
+                type="submit"
+              >
                 Buscar
               </button>
             </div>
-
-            <!-- <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="30"
-              fill="currentColor"
-              class="bi bi-bag-heart"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
-              />
-            </svg> -->
+            <!-- CARRITO -->
             <div id="logoCorazon">
-              <!-- Button trigger modal -->
               <button
                 type="button"
                 class="btn"
@@ -117,7 +113,7 @@
                 </svg>
               </button>
 
-              <!-- Modal -->
+              <!-- MODAL DEL CARRITO -->
               <div
                 class="modal fade"
                 id="exampleModal"
@@ -148,7 +144,7 @@
                         Cerrar
                       </button>
                       <button type="button" class="btn btn-primary">
-                        Guardar cambios
+                        Finalizar compra
                       </button>
                     </div>
                   </div>
@@ -160,133 +156,110 @@
       </nav>
     </header>
     <main>
-      <!-- SLIDER -->
-      <div class="container-flew">
-        <div class="row">
-          <div id="contenidoLateral" class="col-2">
-            <div id="list-example" class="list-group">
-              <a
-                class="list-group-item list-group-item-action"
-                href="#list-item-1"
-                >Calzado</a
-              >
-              <a
-                class="list-group-item list-group-item-action"
-                href="#list-item-2"
-                >Playeras</a
-              >
-              <a
-                class="list-group-item list-group-item-action"
-                href="#list-item-3"
-                >Sudaderas</a
-              >
-              <a
-                class="list-group-item list-group-item-action"
-                href="#list-item-4"
-                >Shorts</a
-              >
-              <a
-                id="carritoBloque"
-                class="list-group-item list-group-item-action"
-                href="#list-item-4"
-                >Carrito
+      <!-- SLIDER LATERAL "SECCIONES DE ROPA"-->
 
-                <div></div>
-                <br />
-                <button id="borrarCarrito">VACIAR CARRITO</button>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-10">
-            <div
-              id="productos"
-              data-bs-spy="scroll"
-              data-bs-target="#list-example"
-              data-bs-smooth-scroll="true"
-              class="scrollspy-example"
-              tabindex="0"
+      <div id="contenido">
+        <div id="sliderContenido">
+          <div id="list-example" class="list-group">
+            <a
+              id="calzadoBtn"
+              class="list-group-item list-group-item-action"
+              href="#list-item-1"
+              >Calzado</a
             >
-              <div id="producto1">
-                <img src="../assets/producto1.jpg" alt="" />
-                <button id="btn-producto1">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Air Jordan 1 Mid</p>
-                <p>Calzado para hombre</p>
-                <p>1 color</p>
-                <p>$3,199</p>
-                <div></div>
-              </div>
-              <div id="producto2">
-                <img src="../assets/producto2.jpg" alt="" />
-                <button id="btn-producto2">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Jordan Flight Essentials</p>
-                <p>1 color</p>
-                <p>$1,049</p>
-              </div>
-              <div id="producto3">
-                <img src="../assets/producto3.jpg" alt="" />
-                <button id="btn-producto3">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Air Jordan 1 Mid</p>
-                <p>Calzado para mujer</p>
-                <p>1 color</p>
-                <p>$3,199</p>
-              </div>
-              <div id="producto4">
-                <img src="../assets/producto4.jpg" alt="" />
-                <button id="btn-producto4">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Paris Saint-Germain 2023/24</p>
-                <p>Jersey de fútbol Jordan para mujer</p>
-                <p>1 color</p>
-                <p>$1,899</p>
-              </div>
-              <div id="producto5">
-                <img src="../assets/producto5.jpg" alt="" />
-                <button id="btn-producto5">COMPRAR</button>
-                <p>Air Jordan 1 Mid</p>
-                <p>Calzado para niños grandes</p>
-                <p>1 color</p>
-                <p>$2,649</p>
-              </div>
-              <div id="producto6">
-                <img src="../assets/producto6.jpg" alt="" />
-                <button id="btn-producto6">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Air Jordan 1 Low G</p>
-                <p>1 color</p>
-                <p>$3,499</p>
-              </div>
-              <div id="producto7">
-                <img src="../assets/producto7.jpg" alt="" />
-                <button id="btn-producto7">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Air Jordan 1 Low SE</p>
-                <p>1 color</p>
-                <p>$2,649</p>
-              </div>
-              <div id="producto8">
-                <img src="../assets/producto8.jpg" alt="" />
-                <button id="btn-producto8">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Jordan Dri-FIT Sport</p>
-                <p>Shorts Diamond para hombre</p>
-                <p>1 color</p>
-                <p>$1,149</p>
-              </div>
-              <div id="producto9">
-                <img src="../assets/producto9.jpg" alt="" />
-                <button id="btn-producto9">COMPRAR</button>
-                <p>Lo último</p>
-                <p>Jordan Flight MVP</p>
-                <p>Sudadera con gorro para hombre</p>
-                <p>1 color</p>
-                <p>$2,149</p>
+            <a
+              id="playerasBtn"
+              class="list-group-item list-group-item-action"
+              href="#list-item-2"
+              >Playeras</a
+            >
+            <a
+              id="sudaderasBtn"
+              class="list-group-item list-group-item-action"
+              href="#list-item-3"
+              >Sudaderas</a
+            >
+            <a
+              id="shortsBtn"
+              class="list-group-item list-group-item-action"
+              href="#list-item-4"
+              >Shorts</a
+            >
+            <a
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal1"
+              data-bs-whatever="@mdo"
+            >
+              Personalízalo
+            </a>
+            <div
+              class="modal fade"
+              id="exampleModal1"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Personaliza tu producto
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="nombreNuevoProducto" class="col-form-label"
+                        >Nombre del producto:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombreNuevoProducto"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="precioNuevoProducto" class="col-form-label"
+                        >Precio</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="precioNuevoProducto"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      id="crearProductoBtn"
+                      type="button"
+                      class="btn btn-primary"
+                    >
+                      Crear producto
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- CONTENEDOR DE PRODUCTOS PRINCIPALES -->
+        </div>
+        <div id="productosPrincipales" class="container">
+          <div id="contenedorProductos" class="row"></div>
         </div>
       </div>
     </main>
@@ -384,9 +357,10 @@
         </div>
       </div>
     </footer>
-
+    <!-- JS SWEET ALERTS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS INDEX -->
-    <script src="../js/compra-js.js"></script>
+    <script src="../js/compra-2.js"></script>
     <!-- BOOTSTRAP JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
