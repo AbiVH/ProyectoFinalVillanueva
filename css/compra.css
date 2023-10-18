@@ -22,19 +22,19 @@ body {
   background-color: black;
 }
 
-.dayModeBody {
+/* .dayModeBody {
   color: rgb(0, 0, 0);
   background-color: white;
-}
+} */
 
-.dayModeNav1 {
+/* .dayModeNav1 {
   color: white;
 }
 
 .dayModeNav2 {
   color: black;
   background-color: white;
-}
+} */
 
 header {
   height: 20vh;

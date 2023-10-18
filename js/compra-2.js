@@ -119,6 +119,7 @@ let productosPrincipales = [];
 
 if (localStorage.getItem("contenidoPrincipal")) {
   console.log("ya existe");
+  mostrarProductos(JSON.parse(localStorage.getItem("contenidoPrincipal")));
 } else {
   fetch("../json/general.json")
     .then((res) => res.json())
@@ -233,19 +234,38 @@ function busquedaProducto() {
 
 busquedaProducto();
 
-// function imprimirProductos(apiJson) {
-//   fetch(apiJson)
-//     .then((resultado) => {
-//       return resultado.json();
-//     })
-//     .then((info) => {
-//       localStorage.setItem("contenidoPrincipal", JSON.stringify(info));
-//       mostrarProductos(info);
-//     });
-// }
+// STORAGE
+btnDarkMode = document.getElementById("logoDark");
+if (localStorage.getItem("DarkMode")) {
+  // si existe
+} else {
+  localStorage.setItem("DarkMode", "false");
+}
 
-// Creamos un array para imprimir el contenido inicial
-// let contenidoInicial = [];
+if (localStorage.getItem("DarkMode") == "true") {
+  document.body.classList.toggle("darkModeBody");
+  document.getElementById("primerNav").classList.toggle("darkModeNav1");
+  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+  btnDarkMode.innerHTML = "Light";
+}
+
+btnDarkMode.addEventListener("click", darkMode);
+function darkMode() {
+  console.log("Funciona");
+  document.body.classList.toggle("darkModeBody");
+  document.getElementById("primerNav").classList.toggle("darkModeNav1");
+  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+
+  if (localStorage.getItem("DarkMode") == "false") {
+    // MODO OSCURO STORAGE
+    btnDarkMode.innerHTML = "Light";
+    localStorage.setItem("DarkMode", "true");
+  } else if (localStorage.getItem("DarkMode") == "true") {
+    // MODO LIGHT STORAGE
+    btnDarkMode.innerHTML = "Dark";
+    localStorage.setItem("DarkMode", "false");
+  }
+}
 
 // creamos el reloj -> 1:59:22
 // const DataTime = luxom.DateTime
