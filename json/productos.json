@@ -1,0 +1,233 @@
+[
+  {
+    "id": 0,
+    "nombre": "Zapatillas Running Nike Air Zoom Pegasus",
+    "precio": 1129.99,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 1,
+    "nombre": "Tenis Nike Air Max 270",
+    "precio": 2149.95,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 2,
+    "nombre": "Zapatos Deportivos Nike Free RN",
+    "precio": 2109.99,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 3,
+    "nombre": "Zapatillas Nike React Infinity Run Flyknit",
+    "precio": 2159.99,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 4,
+    "nombre": "Zapatos de Fútbol Nike Mercurial Superfly",
+    "precio": 3189.95,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 5,
+    "nombre": "Tenis Nike Joyride Run Flyknit",
+    "precio": 2129.99,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 6,
+    "nombre": "Air Jordan 1 Mid",
+    "precio": 3199,
+    "imagen": "../assets/producto1.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 7,
+    "nombre": "Jordan Flight Essentials",
+    "precio": 1049,
+    "imagen": "../assets/producto2.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 8,
+    "nombre": "Air Jordan 1 Mid",
+    "precio": 3199,
+    "imagen": "../assets/producto3.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 9,
+    "nombre": "Paris Saint-Germain 2023/24",
+    "precio": 1899,
+    "imagen": "../assets/producto4.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 10,
+    "nombre": "Air Jordan 1 Mid",
+    "precio": 2649,
+    "imagen": "../assets/producto5.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 11,
+    "nombre": "Air Jordan 1 Low G",
+    "precio": 3499,
+    "imagen": "../assets/producto6.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 12,
+    "nombre": "Air Jordan 1 Low SE",
+    "precio": 2649,
+    "imagen": "../assets/producto7.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 13,
+    "nombre": "Jordan Dri-FIT Sport",
+    "precio": 1149,
+    "imagen": "../assets/producto8.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 14,
+    "nombre": "Jordan Flight MVP",
+    "precio": 2149,
+    "imagen": "../assets/producto9.jpg",
+    "categoria": "calzado"
+  },
+  {
+    "id": 15,
+    "nombre": "Playera Deportiva Nike Dri-FIT",
+    "precio": 829.99,
+    "imagen": "../assets/nike-producto7.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 16,
+    "nombre": "Camiseta Nike Sportswear",
+    "precio": 1019.95,
+    "imagen": "../assets/nike-producto8.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 17,
+    "nombre": "Playera Nike Legend 2.0",
+    "precio": 1024.99,
+    "imagen": "../assets/nike-producto9.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 18,
+    "nombre": "Camiseta Nike Air",
+    "precio": 1327.99,
+    "imagen": "../assets/nike-producto10.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 19,
+    "nombre": "Playera Nike Pro Compression",
+    "precio": 734.95,
+    "imagen": "../assets/nike-producto11.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 20,
+    "nombre": "Camiseta de Manga Larga Nike Element",
+    "precio": 839.99,
+    "imagen": "../assets/nike-producto12.jpg",
+    "categoria": "playeras"
+  },
+  {
+    "id": 21,
+    "nombre": "Shorts Deportivos Nike Flex",
+    "precio": 1029.99,
+    "imagen": "../assets/nike-producto13.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 22,
+    "nombre": "Shorts de Running Nike Tempo",
+    "precio": 1034.95,
+    "imagen": "../assets/nike-producto14.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 23,
+    "nombre": "Shorts de Entrenamiento Nike Pro",
+    "precio": 1019.99,
+    "imagen": "../assets/nike-producto15.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 24,
+    "nombre": "Shorts de Baloncesto Nike Elite",
+    "precio": 827.95,
+    "imagen": "../assets/nike-producto16.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 25,
+    "nombre": "Shorts Nike Court",
+    "precio": 724.99,
+    "imagen": "../assets/nike-producto17.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 26,
+    "nombre": "Shorts de Playa Nike Boardshorts",
+    "precio": 1032.99,
+    "imagen": "../assets/nike-producto18.jpg",
+    "categoria": "shorts"
+  },
+  {
+    "id": 27,
+    "nombre": "Sudadera con Capucha Nike Sportswear",
+    "precio": 1149.99,
+    "imagen": "../assets/nike-producto19.jpg",
+    "categoria": "sudaderas"
+  },
+  {
+    "id": 28,
+    "nombre": "Sudadera Nike Therma",
+    "precio": 1339.95,
+    "imagen": "../assets/nike-producto20.jpg",
+    "categoria": "sudaderas"
+  },
+  {
+    "id": 29,
+    "nombre": "Sudadera Nike Tech Fleece",
+    "precio": 844.99,
+    "imagen": "../assets/nike-producto21.jpg",
+    "categoria": "sudaderas"
+  },
+  {
+    "id": 30,
+    "nombre": "Sudadera con Cierre Nike Rally",
+    "precio": 954.99,
+    "imagen": "../assets/nike-producto22.jpg",
+    "categoria": "sudaderas"
+  },
+  {
+    "id": 31,
+    "nombre": "Sudadera Nike Sportswear Club",
+    "precio": 1347.95,
+    "imagen": "../assets/nike-producto23.jpg",
+    "categoria": "sudaderas"
+  },
+  {
+    "id": 32,
+    "nombre": "Sudadera Nike NSW",
+    "precio": 849.99,
+    "imagen": "../assets/nike-producto24.jpg",
+    "categoria": "sudaderas"
+  }
+]
