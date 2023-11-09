@@ -1,36 +1,36 @@
 [
   {
-    "id": 1,
+    "id": "1_Playera",
     "nombre": "Playera Deportiva Nike Dri-FIT",
     "precio": 829.99,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 2,
+    "id": "2_Playera",
     "nombre": "Camiseta Nike Sportswear",
     "precio": 1019.95,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 3,
+    "id": "3_Playera",
     "nombre": "Playera Nike Legend 2.0",
     "precio": 1024.99,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 4,
+    "id": "4_Playera",
     "nombre": "Camiseta Nike Air",
     "precio": 1327.99,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 5,
+    "id": "5_Playera",
     "nombre": "Playera Nike Pro Compression",
     "precio": 734.95,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 6,
+    "id": "6_Playera",
     "nombre": "Camiseta de Manga Larga Nike Element",
     "precio": 839.99,
     "imagen": "producto2.jpg"

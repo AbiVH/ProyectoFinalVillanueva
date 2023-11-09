@@ -1,36 +1,36 @@
 [
   {
-    "id": 1,
+    "id": "1_Shorts",
     "nombre": "Shorts Deportivos Nike Flex",
     "precio": 1029.99,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 2,
+    "id": "2_Shorts",
     "nombre": "Shorts de Running Nike Tempo",
     "precio": 1034.95,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 3,
+    "id": "3_Shorts",
     "nombre": "Shorts de Entrenamiento Nike Pro",
     "precio": 1019.99,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 4,
+    "id": "4_Shorts",
     "nombre": "Shorts de Baloncesto Nike Elite",
     "precio": 827.95,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 5,
+    "id": "5_Shorts",
     "nombre": "Shorts Nike Court",
     "precio": 724.99,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 6,
+    "id": "6_Shorts",
     "nombre": "Shorts de Playa Nike Boardshorts",
     "precio": 1032.99,
     "imagen": "producto8.jpg"

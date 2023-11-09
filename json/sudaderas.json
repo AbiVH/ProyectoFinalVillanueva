@@ -1,36 +1,36 @@
 [
   {
-    "id": 1,
+    "id": "1_Sudaderas",
     "nombre": "Sudadera con Capucha Nike Sportswear",
     "precio": 1149.99,
     "imagen": "producto9.jpg"
   },
   {
-    "id": 2,
+    "id": "2_Sudaderas",
     "nombre": "Sudadera Nike Therma",
     "precio": 1339.95,
     "imagen": "producto9.jpg"
   },
   {
-    "id": 3,
+    "id": "3_Sudaderas",
     "nombre": "Sudadera Nike Tech Fleece",
     "precio": 844.99,
     "imagen": "producto9.jpg"
   },
   {
-    "id": 4,
+    "id": "4_Sudaderas",
     "nombre": "Sudadera con Cierre Nike Rally",
     "precio": 954.99,
     "imagen": "producto9.jpg"
   },
   {
-    "id": 5,
+    "id": "5_Sudaderas",
     "nombre": "Sudadera Nike Sportswear Club",
     "precio": 1347.95,
     "imagen": "producto9.jpg"
   },
   {
-    "id": 6,
+    "id": "6_Sudaderas",
     "nombre": "Sudadera Nike NSW",
     "precio": 849.99,
     "imagen": "producto9.jpg"

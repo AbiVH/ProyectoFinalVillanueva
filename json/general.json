@@ -1,54 +1,54 @@
 [
   {
-    "id": 1,
+    "id": "1_General",
     "nombre": "Air Jordan 1 Mid",
     "precio": 3199,
     "imagen": "producto1.jpg"
   },
   {
-    "id": 2,
+    "id": "2_General",
     "nombre": "Jordan Flight Essentials",
     "precio": 1049,
     "imagen": "producto2.jpg"
   },
   {
-    "id": 3,
+    "id": "3_General",
     "nombre": "Air Jordan 1 Mid",
     "precio": 3199,
     "imagen": "producto3.jpg"
   },
   {
-    "id": 4,
+    "id": "4_General",
     "nombre": "Paris Saint-Germain 2023/24",
     "precio": 1899,
     "imagen": "producto4.jpg"
   },
   {
-    "id": 5,
+    "id": "5_General",
     "nombre": "Air Jordan 1 Mid",
     "precio": 2649,
     "imagen": "producto5.jpg"
   },
   {
-    "id": 6,
+    "id": "6_General",
     "nombre": "Air Jordan 1 Low G",
     "precio": 3499,
     "imagen": "producto6.jpg"
   },
   {
-    "id": 7,
+    "id": "7_General",
     "nombre": "Air Jordan 1 Low SE",
     "precio": 2649,
     "imagen": "producto7.jpg"
   },
   {
-    "id": 8,
+    "id": "8_General",
     "nombre": "Jordan Dri-FIT Sport",
     "precio": 1149,
     "imagen": "producto8.jpg"
   },
   {
-    "id": 9,
+    "id": "9_General",
     "nombre": "Jordan Flight MVP",
     "precio": 2149,
     "imagen": "producto9.jpg"

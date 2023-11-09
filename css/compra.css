@@ -22,19 +22,6 @@ body {
   background-color: black;
 }
 
-/* .dayModeBody {
-  color: rgb(0, 0, 0);
-  background-color: white;
-} */
-
-/* .dayModeNav1 {
-  color: white;
-}
-
-.dayModeNav2 {
-  color: black;
-  background-color: white;
-} */
 
 header {
   height: 20vh;
@@ -209,6 +196,21 @@ main {
 
 #productosPrincipales {
   grid-area: "productosPrincipales";
+}
+
+#contenedorProductos button{
+  border-radius: 20px;
+  width: 60%;
+  height: 2rem;
+}
+
+#contenedorProductos button:hover {
+  border-radius: 20px;
+  width: 60%;
+  height: 2rem;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-color: white;
 }
 
 /* FOOTER */

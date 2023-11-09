@@ -80,42 +80,17 @@ crearProductoBtn.onclick = () => {
       precioNuevo,
       "incognito.png"
     );
-    // almacenProductosPersonalizados.push(nuevoProducto);
+
     console.log(almacenProductosPersonalizados);
     nombreNuevoProducto.value = "";
     precioNuevoProducto.value = "";
-    // let seccionTienda = localStorage.getItem("contenidoPrincipal");
-    // seccionTienda.push(nuevoProducto);
   }
 };
 
 // SEECIÓN CONTENIDO
 // declaramos array de los productos que se verán en la sección principal
 let productosPrincipales = [];
-
-// if (localStorage.getItem("prueba")) {
-//   console.log("ya existe");
-// } else {
-//   localStorage.setItem("prueba", true);
-// }
-// localStorage.setItem("categoria", "../json/general.json");
-
-// if (localStorage.getItem("categoria")) {
-//   console.log("existe categoria en Storage");
-// } else {
-//   localStorage.setItem("categoria", "../json/general.json");
-// }
-// Codicionamos el Storage para que se nos carge una vista preliminar
-// if (localStorage.getItem("contenidoPrincipal")) {
-//   console.log("seteando json");
-// } else {
-//   imprimirProductos("../json/general.json");
-//   console.log("creando json storage");
-// }
-
-// localStorage.getItem("contenidoPrincipal")
-//   ? console.log("seteando json")
-//   : imprimirProductos("../json/general.json");
+let productosCarrito = [];
 
 if (localStorage.getItem("contenidoPrincipal")) {
   console.log("ya existe");
@@ -152,10 +127,36 @@ function mostrarProductos(array) {
         <p>${producto.nombre}</p>
         <p>1 color</p>
         <p>$${producto.precio}</p>
-        <button id="btn-producto${producto.id}">COMPRAR</button>
+        <button id="btn-producto${producto.id}" class="overlay-button">COMPRAR</button>
       </div>
       <br>`;
     contenedorProductos.appendChild(agregarImpresionProducto);
+
+    let compraBtn = document.getElementById(`btn-producto${producto.id}`);
+    compraBtn.onclick = () => {
+      console.log(`Funciona ${producto.id}`);
+      productosCarrito.push(producto);
+      console.log(productosCarrito);
+      localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+      mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
+    };
+  });
+}
+
+// creamos funcion para mostrar productos en el carrito
+function mostrarCarrito(array) {
+  let contenedorCarrito = document.getElementById("mostrarCarrito");
+  contenedorCarrito.innerHTML = ``;
+
+  array.forEach((producto) => {
+    let agregarImpresionProducto = document.createElement("div");
+    agregarImpresionProducto.innerHTML = `<div id="${producto.id}" style="text-align: center">
+        <img src="../assets/${producto.imagen}" alt="" style="width: 18rem" ; />
+        <p>${producto.nombre}</p>
+        <p>$${producto.precio}</p>
+      </div>
+      <br>`;
+    contenedorCarrito.appendChild(agregarImpresionProducto);
   });
 }
 
@@ -182,33 +183,34 @@ function selccionarCategoria(categoria) {
 }
 
 // Eventos para cambiar el localStorage
+let generalBtn = document.getElementById("generalBtn");
+generalBtn.onclick = () => {
+  localStorage.clear("contenidoPrincipal");
+  selccionarCategoria("../json/general.json");
+};
+
 let calzadoBtn = document.getElementById("calzadoBtn");
 calzadoBtn.onclick = () => {
   localStorage.clear("contenidoPrincipal");
   selccionarCategoria("../json/calzado.json");
-  // localStorage.setItem("categoria", "../json/calzado.json");
-  // selccionarCategoria(JSON.stringify(localStorage.getItem("categoria")));
 };
 
 let playerasBtn = document.getElementById("playerasBtn");
 playerasBtn.onclick = () => {
   localStorage.clear("contenidoPrincipal");
   selccionarCategoria("../json/playeras.json");
-  // localStorage.setItem("categoria", "../json/playeras.json");
 };
 
 let sudaderasBtn = document.getElementById("sudaderasBtn");
 sudaderasBtn.onclick = () => {
   localStorage.clear("contenidoPrincipal");
   selccionarCategoria("../json/sudaderas.json");
-  // localStorage.setItem("categoria", "../json/sudaderas.json");
 };
 
 let shortsBtn = document.getElementById("shortsBtn");
 shortsBtn.onclick = () => {
   localStorage.clear("contenidoPrincipal");
   selccionarCategoria("../json/shorts.json");
-  // localStorage.setItem("categoria", "../json/shorts.json");
 };
 
 //FUNCIONES EN GENERAL
@@ -217,7 +219,7 @@ function filtrar(dataBuscada) {
   productosLocalStorage = JSON.parse(almacenStorage);
 
   let productosFiltrados = productosLocalStorage.filter((data) => {
-    return data.nombre.toLowerCase().includes(dataBuscada);
+    return data.nombre.toLowerCase().includes(dataBuscada.toLowerCase());
   });
   mostrarProductos(productosFiltrados);
   console.log(productosFiltrados);
@@ -235,6 +237,7 @@ function busquedaProducto() {
 busquedaProducto();
 
 // STORAGE
+//DARK MODE
 btnDarkMode = document.getElementById("logoDark");
 if (localStorage.getItem("DarkMode")) {
   // si existe
@@ -246,6 +249,9 @@ if (localStorage.getItem("DarkMode") == "true") {
   document.body.classList.toggle("darkModeBody");
   document.getElementById("primerNav").classList.toggle("darkModeNav1");
   document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+  document.getElementById("carritoDark").classList.toggle("darkModeNav1");
+  document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
+
   btnDarkMode.innerHTML = "Light";
 }
 
@@ -255,6 +261,8 @@ function darkMode() {
   document.body.classList.toggle("darkModeBody");
   document.getElementById("primerNav").classList.toggle("darkModeNav1");
   document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+  document.getElementById("carritoDark").classList.toggle("darkModeNav1");
+  document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
 
   if (localStorage.getItem("DarkMode") == "false") {
     // MODO OSCURO STORAGE
@@ -267,10 +275,16 @@ function darkMode() {
   }
 }
 
-// creamos el reloj -> 1:59:22
-// const DataTime = luxom.DateTime
-// setInterval(()=>{
-//   let fechaAhora=DateTime.now();
-//   fechaDiv.innerHTML=
-// // })
-// console.log(JSON.parse(localStorage.getItem("contenidoPrincipal")));
+// SETEAR CARRITO
+if (localStorage.getItem("carrito")) {
+  mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
+  // si existe
+} else {
+  localStorage.setItem("carrito", "");
+}
+
+// const DateTime = luxon.DateTime.now();
+
+// setInterval(() => {
+//   console.log(DateTime.c);
+// });

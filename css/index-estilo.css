@@ -166,41 +166,6 @@ main {
   font-size: 3rem;
 }
 
-/* Estilos para el texto superpuesto */
-.overlay-text {
-  height: 40vh;
-  width: 60vh;
-  vertical-align: center;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 1.5rem;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Estilos para el botón */
-.overlay-button {
-  display: inline-block;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 50%;
-}
-
-#centrarBoton {
-  text-align: center;
-}
-
 /* FOOTER */
 footer {
   height: 35vh;
