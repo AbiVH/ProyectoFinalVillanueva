@@ -16,80 +16,35 @@ setTimeout(() => {
   }, 1000);
 }, 1000);
 
-// SECCIÓN SLIDE LATERAL IZQUIERDO
-// Creamos el array para almaecenar los productos nuevos
-let almacenProductosPersonalizados = [];
-// Se crea funcion para crear objetos "Crear Producto"
-function crearProducto(id, nombre, precio, imagen, categoria) {
-  (this.id = id),
-    (this.nombre = nombre),
-    (this.precio = precio),
-    (this.imagen = imagen),
-    (this.categoria = categoria);
-}
-// Se crea un evento para crear Nuevos Productos -> Nuevo Objeto "Crear Producto"
-let crearProductoBtn = document.getElementById("crearProductoBtn");
-crearProductoBtn.onclick = () => {
-  let nombreNuevoProducto = document.getElementById("nombreNuevoProducto");
-  let precioNuevoProducto = document.getElementById("precioNuevoProducto");
-  let nombreNuevo = nombreNuevoProducto.value;
-  let precioNuevo = precioNuevoProducto.value;
-  let verificarNombre;
-  let verificarPrecio;
-  nombreNuevo == ""
-    ? Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Un buen producto debe de tener un gran título",
-      })
-    : (verificarNombre = true);
-
-  precioNuevo <= 0
-    ? Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "No me alcanza, súbele el precio",
-      })
-    : (verificarPrecio = true);
-
-  if (verificarNombre == true && verificarPrecio == true) {
-    let nuevoProducto = new crearProducto(
-      nombreNuevo,
-      precioNuevo,
-      "incognito.png"
-    );
-
-    console.log(almacenProductosPersonalizados);
-    nombreNuevoProducto.value = "";
-    precioNuevoProducto.value = "";
-  }
-};
-
 // SEECIÓN CONTENIDO
 // declaramos array de los productos que se verán en la sección principal
 let productosPrincipales = [];
 let productosCarrito = [];
 
-if (localStorage.getItem("contenidoPrincipal")) {
-  console.log("ya existe");
-  mostrarProductos(JSON.parse(localStorage.getItem("contenidoPrincipal")));
-} else {
-  fetch("../json/general.json")
-    .then((res) => res.json())
-    .then((info) => {
-      info.forEach((productos) => {
-        productosPrincipales.push(productos);
-      });
+function setearPrincipal() {
+  if (localStorage.getItem("contenidoPrincipal")) {
+    console.log("ya existe");
+    mostrarProductos(JSON.parse(localStorage.getItem("contenidoPrincipal")));
+  } else {
+    fetch("../json/general.json")
+      .then((res) => res.json())
+      .then((info) => {
+        info.forEach((productos) => {
+          productosPrincipales.push(productos);
+        });
 
-      // Convertir el array a una cadena JSON y guardarla en el localStorage
-      localStorage.clear("contenidoPrincipal");
-      localStorage.setItem(
-        "contenidoPrincipal",
-        JSON.stringify(productosPrincipales)
-      );
-      mostrarProductos(productosPrincipales);
-    });
+        // Convertir el array a una cadena JSON y guardarla en el localStorage
+        localStorage.clear("contenidoPrincipal");
+        localStorage.setItem(
+          "contenidoPrincipal",
+          JSON.stringify(productosPrincipales)
+        );
+        mostrarProductos(productosPrincipales);
+      });
+  }
 }
+
+setearPrincipal();
 
 // creamos funcion para mostrar productos en la sección principal
 function mostrarProductos(array) {
@@ -115,7 +70,7 @@ function mostrarProductos(array) {
     let compraBtn = document.getElementById(`btn-producto${producto.id}`);
     compraBtn.onclick = () => {
       let productoRepetido = productosCarrito.find(
-        (producto) => producto.id === producto.id
+        (productoEnCarrito) => productoEnCarrito.id === producto.id
       );
 
       if (productoRepetido) {
@@ -123,9 +78,8 @@ function mostrarProductos(array) {
       } else {
         productosCarrito.push(producto);
         localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+        mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
       }
-
-      mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
     };
   });
 }
@@ -151,8 +105,11 @@ function mostrarCarrito(array) {
 let finalizaCompra = document.getElementById("finalizaCompra");
 finalizaCompra.onclick = () => {
   localStorage.clear("carrito");
+  productosCarrito = [];
   let contenedorCarrito = document.getElementById("mostrarCarrito");
   contenedorCarrito.innerHTML = ``;
+  setearPrincipal();
+  storageFuncion();
 };
 
 function selccionarCategoria(categoria) {
@@ -232,48 +189,50 @@ function busquedaProducto() {
 busquedaProducto();
 
 // STORAGE
-//DARK MODE
-btnDarkMode = document.getElementById("logoDark");
-if (localStorage.getItem("DarkMode")) {
-  // si existe
-} else {
-  localStorage.setItem("DarkMode", "false");
-}
-
-if (localStorage.getItem("DarkMode") == "true") {
-  document.body.classList.toggle("darkModeBody");
-  document.getElementById("primerNav").classList.toggle("darkModeNav1");
-  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
-  document.getElementById("carritoDark").classList.toggle("darkModeNav1");
-  document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
-
-  btnDarkMode.innerHTML = "Light";
-}
-
-btnDarkMode.addEventListener("click", darkMode);
-function darkMode() {
-  console.log("Funciona");
-  document.body.classList.toggle("darkModeBody");
-  document.getElementById("primerNav").classList.toggle("darkModeNav1");
-  document.getElementById("segundoNav").classList.toggle("darkModeNav2");
-  document.getElementById("carritoDark").classList.toggle("darkModeNav1");
-  document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
-
-  if (localStorage.getItem("DarkMode") == "false") {
-    // MODO OSCURO STORAGE
-    btnDarkMode.innerHTML = "Light";
-    localStorage.setItem("DarkMode", "true");
-  } else if (localStorage.getItem("DarkMode") == "true") {
-    // MODO LIGHT STORAGE
-    btnDarkMode.innerHTML = "Dark";
+function storageFuncion() {
+  //DARK MODE
+  btnDarkMode = document.getElementById("logoDark");
+  if (localStorage.getItem("DarkMode")) {
+    // si existe
+  } else {
     localStorage.setItem("DarkMode", "false");
   }
-}
 
-// SETEAR CARRITO
-if (localStorage.getItem("carrito")) {
-  mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
-  // si existe
-} else {
-  localStorage.setItem("carrito", "");
+  if (localStorage.getItem("DarkMode") == "true") {
+    document.body.classList.toggle("darkModeBody");
+    document.getElementById("primerNav").classList.toggle("darkModeNav1");
+    document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+    document.getElementById("carritoDark").classList.toggle("darkModeNav1");
+    document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
+
+    btnDarkMode.innerHTML = "Light";
+  }
+
+  btnDarkMode.addEventListener("click", darkMode);
+  function darkMode() {
+    console.log("Funciona");
+    document.body.classList.toggle("darkModeBody");
+    document.getElementById("primerNav").classList.toggle("darkModeNav1");
+    document.getElementById("segundoNav").classList.toggle("darkModeNav2");
+    document.getElementById("carritoDark").classList.toggle("darkModeNav1");
+    document.getElementById("logoCarritoDark").classList.toggle("darkModeNav2");
+
+    if (localStorage.getItem("DarkMode") == "false") {
+      // MODO OSCURO STORAGE
+      btnDarkMode.innerHTML = "Light";
+      localStorage.setItem("DarkMode", "true");
+    } else if (localStorage.getItem("DarkMode") == "true") {
+      // MODO LIGHT STORAGE
+      btnDarkMode.innerHTML = "Dark";
+      localStorage.setItem("DarkMode", "false");
+    }
+  }
+
+  // SETEAR CARRITO
+  if (localStorage.getItem("carrito")) {
+    mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
+    // si existe
+  } else {
+    localStorage.setItem("carrito", "");
+  }
 }
