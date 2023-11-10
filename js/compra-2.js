@@ -132,12 +132,23 @@ function mostrarProductos(array) {
       <br>`;
     contenedorProductos.appendChild(agregarImpresionProducto);
 
+    //CREAMOS EVENTOS CON LOS BOTONES PARA LA COMPRA DE CADA PRODUCTO
+
     let compraBtn = document.getElementById(`btn-producto${producto.id}`);
     compraBtn.onclick = () => {
-      console.log(`Funciona ${producto.id}`);
-      productosCarrito.push(producto);
-      console.log(productosCarrito);
-      localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+      //console.log(`Funciona ${producto.id}`);
+
+      let productoRepetido = productosCarrito.find(
+        (producto) => producto.id === producto.id
+      );
+
+      if (productoRepetido) {
+        alert(`El producto ya ha sido añadido, seleccione otro producto`);
+      } else {
+        productosCarrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+      }
+
       mostrarCarrito(JSON.parse(localStorage.getItem("carrito")));
     };
   });
@@ -159,6 +170,14 @@ function mostrarCarrito(array) {
     contenedorCarrito.appendChild(agregarImpresionProducto);
   });
 }
+
+//CREAMOS EVENTO PARA FINALIZAR COMPRA
+let finalizaCompra = document.getElementById("finalizaCompra");
+finalizaCompra.onclick = () => {
+  localStorage.clear("carrito");
+  let contenedorCarrito = document.getElementById("mostrarCarrito");
+  contenedorCarrito.innerHTML = ``;
+};
 
 function selccionarCategoria(categoria) {
   productosPrincipales = [];
