@@ -1,42 +1,20 @@
 // SECCION BUSCADOR
-// Creamos evento para seleccionar categoría en el buscador
-let buscarBtn = document.getElementById("buscarBtn");
+// Creamos una función para actualizar el reloj
+function actualizarReloj() {
+  const DateTime = luxon.DateTime.now();
+  let contenedorReloj = document.getElementById("contenedorReloj");
+  contenedorReloj.innerHTML = `${DateTime.c.hour}:${DateTime.c.minute}:${DateTime.c.second}`;
+}
 
-buscarBtn.onclick = () => {
-  (async () => {
-    const { value: producto } = await Swal.fire({
-      title: "Select field validation",
-      input: "select",
-      inputOptions: {
-        Productos: {
-          rango1: "Menores a $800",
-          rango2: "Entre $800 y $1200",
-          rango3: "Mayores a $1500",
-        },
-      },
-      inputPlaceholder: "Selecciona una categoría",
-      showCancelButton: true,
-      inputValidator: (value) => {
-        return new Promise((resolve) => {
-          if (value) {
-            resolve();
-            console.log(value);
-          }
-        });
-      },
-    });
+// Llamamos a la función inicialmente después de 1 segundo
+setTimeout(() => {
+  actualizarReloj();
 
-    if (producto === "rango1") {
-      Swal.fire(`Seleccionaste: Menores a $800`);
-    }
-    if (producto === "rango2") {
-      Swal.fire(`Seleccionaste: Entre $800 y $1200`);
-    }
-    if (producto === "rango3") {
-      Swal.fire(`Seleccionaste: Mayores a $1500`);
-    }
-  })();
-};
+  // Configuramos el intervalo para que se ejecute cada segundo
+  setInterval(() => {
+    actualizarReloj();
+  }, 1000);
+}, 1000);
 
 // SECCIÓN SLIDE LATERAL IZQUIERDO
 // Creamos el array para almaecenar los productos nuevos
@@ -136,8 +114,6 @@ function mostrarProductos(array) {
 
     let compraBtn = document.getElementById(`btn-producto${producto.id}`);
     compraBtn.onclick = () => {
-      //console.log(`Funciona ${producto.id}`);
-
       let productoRepetido = productosCarrito.find(
         (producto) => producto.id === producto.id
       );
@@ -301,9 +277,3 @@ if (localStorage.getItem("carrito")) {
 } else {
   localStorage.setItem("carrito", "");
 }
-
-// const DateTime = luxon.DateTime.now();
-
-// setInterval(() => {
-//   console.log(DateTime.c);
-// });
